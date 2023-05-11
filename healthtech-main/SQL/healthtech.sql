@@ -1,0 +1,12 @@
+CREATE SCHEMA healthtech;
+
+use healthtech;
+
+CREATE TABLE tb_login (
+id_login INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+cpf INTEGER UNSIGNED NOT NULL,
+usuario VARCHAR(45) NOT NULL,
+senha VARCHAR(45) NOT NULL,
+nome VARCHAR(50) NOT NULL,
+PRIMARY KEY(id_login, cpf))
+ENGINE=InnoDB;

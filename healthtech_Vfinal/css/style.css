@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Base */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Mukta', sans-serif;
+}
+
+/* Login */
+
+.login body{
+  width: 100%;
+  height: 100vh;
+  background-color: #1C2331;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.form-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login h2 {
+  font-size: 24px;
+  color: #162938;
+  margin-bottom: 20px;
+}
+
+.form-left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-right {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #162938;
+  color: #fff;
+  padding-top: 50px;
+}
+
+.form-right svg {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.form-right h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #162938;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group .input-group-text {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group .form-check-label {
+  color: #162938;
+}
+
+.btn-primary {
+  background-color: #162938;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0e1e2e;
+}
+
+.text-primary {
+  color: #162938;
+}
+
+/* Responsividade */
+@media (min-width: 576px) {
+  .form-box {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .form-right {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .form-box {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-box {
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+  }
+
+  .form-left {
+    padding-right: 20px;
+  }
+
+  .form-right {
+    padding-left: 20px;
+  }
+}
+
+
+/* Header */
+
+.sidebar {
+  width: 90px;
+  height: 430px;
+  background: rgba(0, 47, 93, 0.71);
+  backdrop-filter: blur(6px);
+  padding: 10px;
+  position: absolute;
+  top: calc(50% - 300px);
+  left: 0;
+  border-radius: 12px;
+  display: grid;
+  grid-template-rows: 20% 40% 35%;
+  overflow: hidden;
+  transition: all 0.1s ease-out;
+  cursor: pointer;
+  font-family: 'Mukta', sans-serif;
+}
+
+.sidebar p {
+  font-size: 14px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar.active {
+  width: 230px;
+}
+
+/* Top */
+.top {
+  width: 80px;
+}
+
+.dots {
+  margin: 10px 8px 10px 0;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ff5c4c;
+  margin: 0 5px;
+}
+
+.dot:nth-of-type(2) {
+  background: #ffbf38;
+}
+
+.dot:nth-of-type(3) {
+  background: #66e14f;
+}
+
+.logo {
+  cursor: pointer;
+  color: #222;
+  position: absolute;
+  left: 47%; /* Centralizar horizontalmente */
+  top: 48px; /* Ajustar a distância do topo */
+  transform: translateX(-50%); /* Centralizar horizontalmente */
+  transition: 0.5s linear;
+}
+
+.logo a {
+
+  text-decoration: none; /* Remover sublinhado */
+}
+.logo p {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-left: 6px;
+  text-decoration: none; /* Remover sublinhado */
+}
+/* End Top */
+
+/* Menu */
+.menu {
+  width: 200px;
+}
+
+.menu-item {
+  justify-content: start;
+  margin: 0 0 15px 25px;
+  text-decoration: none;
+}
+
+.menu-item p {
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 30px;
+  margin-top: 12px;
+  opacity: 1;
+  color: #FFFFFF;
+}
+
+.menu-item:hover p {
+  opacity: 0.8; /* Ajuste a opacidade desejada */
+}
+
+.menu-item a {
+  text-decoration: none; /* Remover sublinhado */
+  text-color: #FFFFFF;
+  color: inherit; /* Herdar a cor do texto */
+}
+
+.menu-item a:hover {
+  text-decoration: none; /* Remover sublinhado ao passar o mouse */
+  color: inherit; /* Herdar a cor do texto ao passar o mouse */
+}
+
+/* End Menu */
+
+/* icons */
+
+.hide {
+  transform: translateX(-250px);
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  transition-delay: var(--delay);
+}
+
+.icon {
+  font-size: 22px;
+  color: white;
+  position: absolute;
+  transition: 0.3s linear;
+}
+
+/* before after */
+.total.sidebar-active {
+  margin-left: 230px; /* Ajuste a margem esquerda para o tamanho do sidebar */
+  transition: all 0.25s ease-out;
+}
+
+
+.icon::before {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 40px;
+  left: -80px;
+  top: -7px;
+  border-radius: 12px;
+  transition: 0.4s all;
+}
+
+.menu-item:hover .icon::before {
+  background: rgba(255, 255, 255, 0.5);
+  transition: 0.4s ease;
+}
+
+.sidebar.active .hide {
+  opacity: 1;
+  transform: translateX(0);
+  transition-property: opacity;
+  transition-delay: 0.25s;
+}
+
+.sidebar.active .icon::before {
+  width: 200px;
+  left: -20px;
+}
+
+/*form 
+/* CSS para diminuir o tamanho vertical dos inputs */
+.form-control {
+  height: 30px;
+}
+
+/* CSS para centralizar a página */
+#containerCliente {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+#containerFuncionario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 105vh;
+}
+
+.form-wrap-cliente {
+  width: 400px;
+}
+.form-wrap-funcionario {
+  width: 490px;
+}
+
+.link-wrapper {
+  margin-top: 15px; /* Ajuste o valor conforme necessário para posicionar o link mais abaixo */
+}
+
+/* Adicione este código no seu arquivo style.css */

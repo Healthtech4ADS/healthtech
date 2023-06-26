@@ -1,0 +1,76 @@
+CREATE SCHEMA healthtech DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE healthtech;
+
+CREATE TABLE tb_cliente (
+  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  cpf VARCHAR(14) NOT NULL,
+  nome VARCHAR(45) NULL,
+  data_nascimento VARCHAR(10) NULL,
+  telefone VARCHAR(45) NULL,
+  endereco VARCHAR(200) NULL,
+  cep VARCHAR(9) NULL,
+  plano VARCHAR(25) NOT NULL,
+  senha VARCHAR(50) NULL,
+  email VARCHAR(50) NOT NULL,
+  PRIMARY KEY(id),
+  UNIQUE (cpf),
+  UNIQUE (email)
+);
+
+CREATE TABLE tb_funcionario (
+  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(45) NULL, 
+  cpf VARCHAR(14) NOT NULL,
+  data_nascimento VARCHAR(10) NULL, 
+  telefone VARCHAR(45) NULL,
+  email VARCHAR(50) NULL, 
+  admissao VARCHAR(10) NULL,  
+  demissao VARCHAR(10) NULL, 
+  contrato VARCHAR(40) NULL, 
+  salario DECIMAL(10, 2) NULL, 
+  cargo INTEGER NULL, 
+  senha VARCHAR(50) NULL, 
+  modalidade VARCHAR(100) NULL,
+  endereco VARCHAR(200) NULL, 
+  cep VARCHAR(9) NULL,
+  resposta VARCHAR(10),
+  PRIMARY KEY(id),
+  UNIQUE (cpf),
+  UNIQUE (email)
+);
+
+CREATE TABLE token (
+  id int AUTO_INCREMENT primary key,
+  token VARCHAR(255)
+);
+
+INSERT INTO token (token) VALUES ('autores');
+
+INSERT INTO tb_funcionario (nome, cpf, data_nascimento, telefone, email, admissao, demissao, contrato, salario, cargo, senha, modalidade, endereco, cep)
+VALUES ('Carol Abreu', '123.456.789-01', '12/03/1990', '12345698', 'carol@example.com', '15/04/2022', '', 'CLT', 2800.45, '1', 'mudar@123', 'pilates', '123 Main St', '12345-678'),
+       ('Machado de Assis', '123.456.789-02', '21/06/1839', '98765432', 'machado@example.com', '01/01/2020', '', 'CLT', 5000.00, '1', 'senha123', 'Yoga', 'Rua dos Clássicos, 123', '54321'),
+       ('Emily Brontë', '123.456.789-03', '30/07/1818', '87654321', 'emily@example.com', '01/01/2020', '', 'CLT', 5000.00, '2', 'senha123', 'Pilates', 'Rua dos Clássicos, 456', '54321'),
+       ('Fyodor Dostoevsky', '123.456.789-04', '11/11/1821', '76543210', 'fyodor@example.com', '01/01/2020', '', 'CLT', 5000.00, '1', 'senha123', 'Crossfit', 'Rua dos Clássicos, 789', '54321'),
+       ('Jane Austen', '123.456.789-05', '16/12/1775', '65432109', 'jane@example.com', '01/01/2020', '', 'CLT', 5000.00, '2', 'senha123', 'Yoga', 'Rua dos Clássicos, 987', '54321'),
+       ('Leo Tolstoy', '123.456.789-06', '09/09/1828', '54321098', 'leo@example.com', '01/01/2020', '', 'CLT', 5000.00, '1', 'senha123', 'Pilates', 'Rua dos Clássicos, 654', '54321'),
+       ('Charlotte Brontë', '123.456.789-07', '21/04/1816', '43210987', 'charlotte@example.com', '01/01/2020', '', 'CLT', 5000.00, '2', 'senha123', 'Crossfit', 'Rua dos Clássicos, 321', '54321'),
+       ('Charles Dickens', '123.456.789-08', '07/02/1812', '32109876', 'charles@example.com', '01/01/2020', '', 'CLT', 5000.00, '1', 'senha123', 'Yoga', 'Rua dos Clássicos, 678', '54321'),
+       ('Virginia Woolf', '123.456.789-09', '25/01/1882', '21098765', 'virginia@example.com', '01/01/2020', '', 'CLT', 5000.00, '2', 'senha123', 'Pilates', 'Rua dos Clássicos, 345', '54321'),
+       ('Mark Twain', '123.456.789-10', '30/11/1835', '10987654', 'mark@example.com', '01/01/2020', '', 'CLT', 5000.00, '1', 'senha123', 'Crossfit', 'Rua dos Clássicos, 012', '54321'),
+       ('George Orwell', '123.456.789-11', '25/06/1903', '09876543', 'george@example.com', '01/01/2020', '', 'CLT', 5000.00, '2', 'senha123', 'Yoga', 'Rua dos Clássicos, 678', '54321');
+
+INSERT INTO tb_cliente (cpf, nome, data_nascimento, telefone, endereco, cep, plano, senha, email)
+VALUES ('123.456.789-00', 'Leonardo da Vinci', '15/04/1452', '12345678', 'Rua dos Artistas, 123', '54321', 'Platinum', 'senha123', 'leonardo@example.com'),
+       ('123.456.789-01', 'Vincent van Gogh', '30/03/1853', '23456789', 'Avenida das Cores, 456', '54321', 'Gold', 'senha123', 'vangogh@example.com'),
+       ('123.456.789-02', 'Pablo Picasso', '25/10/1881', '34567890', 'Travessa das Telas, 789', '54321', 'Silver', 'senha123', 'picasso@example.com'),
+       ('123.456.789-03', 'Frida Kahlo', '06/07/1907', '45678901', 'Rua dos Autorretratos, 012', '54321', 'Bronze', 'senha123', 'frida@example.com'),
+       ('123.456.789-04', 'Salvador Dalí', '11/05/1904', '56789012', 'Avenida Surreal, 345', '54321', 'Platinum', 'senha123', 'dali@example.com'),
+       ('123.456.789-05', 'Michelangelo', '06/03/1475', '67890123', 'Piazza dei Maestri, 678', '54321', 'Gold', 'senha123', 'michelangelo@example.com'),
+       ('123.456.789-06', 'Georgia OKeeffe', '15/11/1887', '78901234', 'Canyon Road, 901', '54321', 'Silver', 'senha123', 'okeeffe@example.com'),
+       ('123.456.789-07', 'Claude Monet', '14/11/1840', '89012345', 'Rue des Peintres, 234', '54321', 'Bronze', 'senha123', 'monet@example.com'),
+       ('123.456.789-08', 'Gustav Klimt', '14/07/1862', '90123456', 'Ringstraße, 567', '54321', 'Platinum', 'senha123', 'klimt@example.com'),
+       ('123.456.789-09', 'Rembrandt van Rijn', '15/07/1606', '01234567', 'Herengracht, 890', '54321', 'Gold', 'senha123', 'rembrandt@example.com');
+
+SELECT * FROM tb_cliente;
+SELECT * FROM tb_funcionario;
